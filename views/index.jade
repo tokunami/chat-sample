@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
+    script(type='text/javascript', src='/socket.io/socket.io.js')
+    script(type='text/javascript', src='/javascripts/client.js')
+  body
+    h1= title
+    p 現在の閲覧者数は
+        span#count
+        人です
+
+    div#myroom
+    div#list-box
+
+    br
+
+    form#room_form(action="javascript:void(0);" method="get" onsubmit="return false;")
+      input#enter(type="text" name="enter")
+      input(type="submit" value="ルームへ")
+
+    form#comment_form(action="javascript:void(0);" autocomplete="off")
+        p 名前:
+          input#name(type="text")
+        p メッセージ:
+          input#text(type="text")
+          input(type="submit" value="送信")
+    hr
+
+    image#img(src='/images/noimage.jpg')
+    p#imgtitle
+    hr
+    dl#list
